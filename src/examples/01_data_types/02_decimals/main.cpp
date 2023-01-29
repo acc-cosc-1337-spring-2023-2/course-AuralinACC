@@ -10,7 +10,7 @@ int main()
     double num1 = add_to_double_1(num);
 
     //we do something
-    num1 = num1 + 1
+    num1 = num1 + 1;
 
     cout<<"Adding to a double: "<<num1<<"\n";
 

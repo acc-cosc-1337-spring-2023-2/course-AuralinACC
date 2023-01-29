@@ -5,7 +5,7 @@
 #include "char.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
-	REQUIRE(true == true);
+	REQUIRE(true == true);// use this as a guide to build your test assertion
 }
 
 /*test case echo_variable */
@@ -13,12 +13,15 @@ TEST_CASE("Test Echo variable ","validation") {
 	REQUIRE(echo_variable(5) ==5);//test 1
 	REQUIRE(echo_variable(10) == 10);//2
 	REQUIRE(echo_variable(100) == 100);//3
+	REQUIRE(echo_variable(1000) == 1000);//4
 }
 
+
 /*test case add_to_double_1 with 0 as parameter*/
-//TEST_CASE("Test add to double 1 ","testing inconsistencies when comparing doubles") {
-//	REQUIRE(add_to_double_1(0) == .9);
-//}
+TEST_CASE("Test add to double 1 ","testing inconsistencies when comparing doubles")
+{
+	//REQUIRE(add_to_double_1(0) == .9);
+}
 
 /*test case add_to_double_1 with 1 as parameter*/
 
@@ -32,5 +35,5 @@ TEST_CASE("Test get char ascii value")
 	REQUIRE(get_char_ascii('A') == 65);
 	REQUIRE(get_char_ascii('a') == 97);
 }
-/*test case string test ASCII values Joe characters are equal to 74, 111, and 101*/
 
+/*test case string test ASCII values Joe characters are equal to 74, 111, and 101*/

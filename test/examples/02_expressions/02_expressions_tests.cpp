@@ -11,9 +11,9 @@ TEST_CASE("verify operator_precedence_1", "validating order of operations") {
 	REQUIRE(operator_precedence_1(3, 6, 3) == 5);
 }
 
-//TEST_CASE("verify operator_precedence_2", "validating order of operations") {
-//	REQUIRE(operator_precedence_2(3, 6, 3) == 5);
-//}
+TEST_CASE("verify operator_precedence_2", "validating order of operations") {
+	REQUIRE(operator_precedence_2(3, 6, 3) == 3);
+}
 
 TEST_CASE("verify convert int to double", "int converted to double") {
 	REQUIRE(convert_to_double(10, .5) == 5);
@@ -21,5 +21,5 @@ TEST_CASE("verify convert int to double", "int converted to double") {
 
 TEST_CASE("verify convert double to int", "double converted to int") {
 	REQUIRE(convert_double_to_int(10.5) == 10);
-	REQUIRE(convert_double_to_int(10.53464373457) == 10);
+	REQUIRE(convert_double_to_int(15.59849459494949) == 15);
 }
