@@ -13,13 +13,14 @@ int main()
 	int num = 0;
 	int num1 = 4;
 
+	cout<<"Enter value for num: ";
 	std::cin>>num;
 
 	int result = multiply_numbers(num);
-	cout<<"Result is: "<<result<<"\n";
+	cout<<"Result of 5 * "<<num<< " is: "<<result<<"\n";
 	
 	result = multiply_numbers(num1);
-	cout<<"Result is: "<<result<<"\n";
+	cout<<"Result of 5 * "<<num1<<" is: "<<result<<"\n";
 
 	return 0;
 }
