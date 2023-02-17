@@ -28,10 +28,10 @@ string get_letter_grade_using_if(int grade)
     {
         result = "F";
     }
-    else
+   /* else
     {
         result = "Invalid grade";
-    }
+    }*/
 
     return result;
 }
@@ -57,9 +57,9 @@ string get_letter_grade_using_switch(int grade)
      case 0 ... 59:
         option = "F";
         break;
-     default: //works like the else statement in the if-else
+    /* default: //works like the else statement in the if-else
         option = "Invalid grade";
-        break;
+        break; */
     }
     return option;
 }
