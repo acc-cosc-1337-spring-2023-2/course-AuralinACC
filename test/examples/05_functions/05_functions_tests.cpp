@@ -1,6 +1,7 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 #include "val_ref.h"
+#include "default.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
@@ -20,4 +21,19 @@ TEST_CASE("Test function reference param")
 	ref_params(num);
 
 	REQUIRE(num == 20);
+}
+
+TEST_CASE("Test get gross pay default parameters")
+{
+	REQUIRE(get_gross_pay() == 800);
+	REQUIRE(get_gross_pay(40) == 800);
+	REQUIRE(get_gross_pay(40, 20) == 800);
+	REQUIRE(get_gross_pay(41, 20) == 820);
+
+}
+
+TEST_CASE("Test get gross pay function overload")
+{
+	REQUIRE(get_gross_pay(40, 7.5) == 300);
+	REQUIRE(get_gross_pay(40, 20, 100) == 801);
 }
