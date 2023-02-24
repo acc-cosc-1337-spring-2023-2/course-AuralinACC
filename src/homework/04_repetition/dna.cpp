@@ -15,6 +15,7 @@ int factorial(int num)
     }
     return fact;
 }
+
 int gcd(int num1, int num2)
 {
     if(num1 < num2)
@@ -41,9 +42,47 @@ void run_menu()
         cout<<"\nEnter menu option: ";
         cin>>option;
 
-        handle_menu_option(option);
+        auto num = 0;
+        auto num1 = 0;
+        auto num2 = 0;
+    
+
+        switch(option)
+        {
+        case 1:
+            cout<<"\nSelected Factorial: \n";
+            cout<<"Enter a positive integer: ";
+            cin>>num;
+            cout<<"The factorial of the number entered is: "<<factorial(num)<<"\n\n";
+            break;
+        case 2:
+            cout<<"\nSelected Greatest Common Divisor: \n";
+            cout<<"Enter a positive integer: ";
+            cin>>num1;
+            cout<<"Enter a second positive integer: ";
+            cin>>num2;
+            cout<<"\nThe Greatest Common Divisor of the numbers entered is: "<<gcd(num1, num2)<<"\n\n";
+            break;
+        case 3:
+            cout<<"\nSelected Exit: \n";
+            char choice;
+            cout<<"Are you sure you want to exit(Y/N)?\n";
+            cin>>choice;
+            cout<<"\n";
+            if(choice == 'y' || choice == 'Y')
+            {
+                cout<<"Exiting Program"<<"\n\n";
+                option++;
+                
+            }
+            else if(choice  == 'n' || choice == 'N')
+            {
+                break;
+            }
+        }
         
-    } while (option != 3);
+    } 
+    while (option != 4);
 }
 
 void display_menu()
@@ -52,51 +91,3 @@ void display_menu()
 	cout<<"2-Greatest Common Divisor\n";
 	cout<<"3-Exit\n";
 }
-
-void handle_menu_option(int option)
-{
-    auto num = 0;
-
-    switch(option)
-    {
-     case 1:
-    	cout<<"\nSelected Factorial: \n";
-        cout<<"Enter a positive integer: ";
-        cin>>num;
-        cout<<"The factorial of the number entered is: "<<factorial(num)<<"\n\n";
-       	break;
-   	 case 2:
-       	cout<<"\nSelected Greatest Common Divisor: \n";
-       	break;
-     case 3:
-       	cout<<"\nSelected Exit \n";
-       	break;
-     default:
-       	cout<<"\nInvalid option: \n";
-       	break;
-    } 
-
-}
-
-/*
-        cin>>option;
-
-		switch(option)
-    	{
-    	 case 1:
-        	cout<<"\nselected factorial: \n";
-        	break;
-   		 case 2:
-        	cout<<"\nSelected Greatest Common Divisor: \n";
-        	break;
-    	 case 3:
-        	cout<<"\nSelected Exit \n";
-        	break;
-    	 default:
-        	cout<<"\nInvalid option: \n";
-        	break;
-    	} 
-	}
-    while (option != '1' && option != '2' && option !=3);
-}
-*/
