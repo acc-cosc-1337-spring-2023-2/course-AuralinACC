@@ -6,8 +6,17 @@ using std::cout; using std::string;
 
 int main()
 {
-    /*string lang = "C++";
+    string lang = "C++";
+    auto num = 5;
+
     cout<<lang<<"\n";
+    cout<<"Address of lang: "<<&lang<<"\n";
+    cout<<lang[0]<<"\n";
+    cout<<"address of num: "<<&num<<"\n";
+    cout<<"Address of character at 0 index: "<<static_cast<void *>(&lang[0])<<"\n";
+    cout<<"Address of character at 1 index: "<<static_cast<void *>(&lang[1])<<"\n";
+    cout<<"Address of character at 2 index: "<<static_cast<void *>(&lang[2])<<"\n";
+
     cout<<"Size: "<<lang.size()<<"\n";
     cout<<"Length: "<<lang.length()<<"\n";
     cout<<"Capcity: "<<lang.capacity()<<"\n\n";
@@ -20,10 +29,11 @@ int main()
     lang.append("r");
     cout<<lang<<"\n";
     cout<<"Size: "<<lang.size()<<"\n";
-    cout<<"Capcity: "<<lang.capacity()<<"\n\n";*/
+    cout<<"Capcity: "<<lang.capacity()<<"\n\n";
 
     //create strings
-    string s0("Initial string");
+
+    /*string s0("Initial string");
     cout<<s0<<"\n";
 
     string s1(s0);
@@ -44,7 +54,7 @@ int main()
     string s7("123456abac**(**)");
     cout<<s7<<"\n";
 
-    
+    */
 
 
     return 0;
