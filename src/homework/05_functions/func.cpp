@@ -54,3 +54,5 @@ string reverse_string(string dna)
     }
     return dna;
 }
+
+//hw resubmission attempt
