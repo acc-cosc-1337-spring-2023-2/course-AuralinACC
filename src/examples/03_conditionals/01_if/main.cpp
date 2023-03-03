@@ -42,7 +42,7 @@ int main()
 	}
 	else
 	{
-		cout<<value<<" is not even\n";
+		cout<<value<<" is odd\n";
 	}
 
 

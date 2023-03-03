@@ -15,7 +15,6 @@ void prompt_user()
         cin>>choice;
     } 
     while (choice == 'y' || choice == 'Y');
-
 }
 
 void display_menu()
@@ -51,7 +50,7 @@ void handle_menu_option(int num)
         cout<<"\nselected Customer option: \n";
         break;
     case 2:
-        cout<<"\nSelected vendor option: \n";
+        cout<<"\nSelected Vendor option: \n";
         break;
     case 3:
         cout<<"\nSelected Payroll option \n";

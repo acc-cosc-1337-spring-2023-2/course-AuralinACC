@@ -11,7 +11,7 @@ int sum_of_squares(int num)
 
     while(num > 0)
     {
-        sum += num * num + sum;
+        sum += num * num;
         num--;//num = num - 1; //code to make the conditional false
     }
 
