@@ -1,16 +1,17 @@
 //atm.cpp
 #include "atm.h"
-#include "checking_account.h"
 
-using std::cin; using std::cout;
+using std::cout; using std::cin;
 
 void display_menu()
 {
-    cout<<"\\nAcc COSC Bank\n\n";
+    cout<<"\n\nAcc COSC Bank\n\n";
     cout<<"1-Deposit\n";
-    cout<<"2-withdraw\n";
+    cout<<"2-Withdraw\n";
     cout<<"3-Balance\n";
+    cout<<"4-Exit\n";
 }
+
 void run_menu(CheckingAccount &account)
 {
     auto option = 0;
@@ -23,31 +24,34 @@ void run_menu(CheckingAccount &account)
         handle_menu_option(option, account);
 
     } while (option != 4);
-    
+   
 }
+
 void handle_menu_option(int option, CheckingAccount &account)
 {
     auto amount = 0;
-    
+
     switch(option)
     {
-     case 1:
-        cout<<"enter depoist amount";
+    case 1:
+        cout<<"Enter deposit amount: ";
+        cin>>amount;
         account.deposit(amount);
         break;
-     case 2:
-        cout<<"Enter withdrawl amount";
+    case 2:
+        cout<<"Enter withdraw amount: ";
+        cin>>amount;
         account.withdraw(amount);
         break;
-     case 3:
+    case 3:
         cout<<"Balance: ";
-        cout<<account.get_balance()<<"\n";
+        cout<<account<<"\n";
         break;
-     case 4:
+    case 4:
         cout<<"Exiting ...\n";
         break;
-     default:
+    default:
         cout<<"Invalid option ...";
         break;
-        }
+    }
 }
