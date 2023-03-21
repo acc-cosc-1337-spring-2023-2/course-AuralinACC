@@ -1,40 +1,23 @@
 #include<iostream>
 #include<time.h>
+#include<vector>
 #include "atm.h"
 #include "checking_account.h"
 #include "savings_account.h"
 
-using std::cout; using std::cin;
+using std::cout; using std::cin; using std::vector;
 
 int main()
 {
+	vector<BankAccount*> accounts;//create an empty list of BanAccount Pointers
 	srand(time(NULL));
 	SavingsAccount savings;
+	CheckingAccount checking;//cust 0
 
-	CheckingAccount account;//cust 0
-	auto choice = 'c';
+	accounts.push_back(&checking);
+	accounts.push_back(&savings);
 
-	cout<<"Checking or savings ";
-	cin>>choice;
-
-	if(choice == 'c' || choice == 'C')
-	{
-		cout<<account;
-		cout<<account.get_balance()<<"\n";
-		show_balance(account);
-		
-		run_menu(account);
-	}
-	else
-	{
-		cout<<savings;
-		cout<<savings.get_balance()<<"\n";
-		show_balance(savings);
-
-		run_menu(savings);
-	}
-	
-	//cout<<account.get_balance()<<"\n";
+	run_menu(accounts);
 
 	return 0;
 }

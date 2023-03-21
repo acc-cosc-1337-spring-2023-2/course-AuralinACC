@@ -1,7 +1,7 @@
 //atm.cpp
 #include "atm.h"
 
-using std::cout; using std::cin;
+using std::cout; using std::cin; using std::vector;
 
 void display_menu()
 {
@@ -12,9 +12,16 @@ void display_menu()
     cout<<"4-Exit\n";
 }
 
-void run_menu(CheckingAccount &account)
+void run_menu(std::vector<BankAccount> *account)
 {
     auto option = 0;
+
+    auto choice = 0;
+
+    cout<<"Checking(1) or savings(2) ";
+    cin>>choice;
+
+    BankAccount* account = accounts[choice-1];
 
     do
     {
@@ -24,10 +31,9 @@ void run_menu(CheckingAccount &account)
         handle_menu_option(option, account);
 
     } while (option != 4);
-   
 }
 
-void handle_menu_option(int option, CheckingAccount &account)
+void handle_menu_option(int option, BankAccount *account)
 {
     auto amount = 0;
 
@@ -36,16 +42,16 @@ void handle_menu_option(int option, CheckingAccount &account)
     case 1:
         cout<<"Enter deposit amount: ";
         cin>>amount;
-        account.deposit(amount);
+        account->deposit(amount);
         break;
     case 2:
         cout<<"Enter withdraw amount: ";
         cin>>amount;
-        account.withdraw(amount);
+        account->withdraw(amount);
         break;
     case 3:
         cout<<"Balance: ";
-        cout<<account<<"\n";
+        cout<<account->get_balance()<<"\n";
         break;
     case 4:
         cout<<"Exiting ...\n";
