@@ -1,4 +1,5 @@
 #include<iostream>
+#include <memory>
 #include<time.h>
 #include<vector>
 #include "atm.h"
@@ -6,16 +7,20 @@
 #include "savings_account.h"
 
 using std::cout; using std::cin; using std::vector;
+using std::unique_ptr; using std::make_unique;
 
 int main()
 {
-	vector<BankAccount*> accounts;//create an empty list of BankAccount pointers
+	vector<unique_ptr<BankAccount>> accounts;//create an empty list of BankAccount pointers //list on heap
 	srand(time(NULL));
-	SavingsAccount savings;
-	CheckingAccount checking;//cust 0
 
-	accounts.push_back(&checking);
-	accounts.push_back(&savings);
+	accounts.push_back(make_unique<CheckingAccount>());
+	accounts.push_back(make_unique<SavingsAccount>());
+
+
+	cout<<accounts[0]->get_balance()<<"\n";
+	cout<<accounts[1]->get_balance()<<"\n";
+	//accounts.push_back();
 
 	run_menu(accounts);
 
