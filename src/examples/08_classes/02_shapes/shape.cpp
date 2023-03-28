@@ -1,14 +1,7 @@
 //shape.cpp
-#include <iostream>
-
-#ifndef SHAPE_H
-#define SHAPE_H
-
-class Shape
+#include "shape.h" 
+/* class function/mneathod implementation is optional
+void Shape::draw()
 {
-public:
-    virtual void draw() = 0;
-};
-
-#endif
-
+    std::cout<<"Shape...\n";
+}*/
