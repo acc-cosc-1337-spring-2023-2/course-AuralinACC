@@ -7,7 +7,7 @@
 class Shape//Abstract class
 {
 public:
-    virtual void draw() = 0; //pure virtual function
+    virtual void draw() = 0;//pure virtual function
 };
 
 #endif

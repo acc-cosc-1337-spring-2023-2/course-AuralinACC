@@ -14,14 +14,14 @@ using std::vector;
 using std::unique_ptr; using std::make_unique;
 
 int main() 
-{	
-	vector<unique_ptr<Shape>> shapes;
+{
+    vector<unique_ptr<Shape>> shapes;
 	shapes.push_back(make_unique<Circle>());
 	shapes.push_back(make_unique<Line>());
 
 	shapes[0]->draw();
 	shapes[1]->draw();
-	
+
 	for(auto& shape: shapes)
 	{
 		shape->draw();
