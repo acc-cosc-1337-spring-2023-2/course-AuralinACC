@@ -3,6 +3,7 @@
 #include<vector>
 #include "atm.h"
 #include "customer.h"
+#include "atm_data.h"
 
 using std::vector;
 
@@ -10,14 +11,9 @@ int main()
 {
 	srand(time(NULL));
 	
-	vector<Customer> customers;//empty customer list
-	customers.push_back(Customer());
-	customers.push_back(Customer());
-	customers.push_back(Customer());
-	customers.push_back(Customer());
-	customers.push_back(Customer());
+	ATMData data;
 
-	run_menu(customers);
+	run_menu(data);
 
 	return 0;
 }
