@@ -5,12 +5,19 @@
 
 using std::cout; using std::cin;
 using std::string; using std::vector;
+using std::istream; using std::ostream;
 
 #ifndef TIC_TAC_TOE_H
 #define TIC_TAC_TOE_H
 
 class TicTacToe
 {
+    //Free functions 
+//Overloading the output stream operator
+friend std::ostream& operator<<(std::ostream& out, const TicTacToe& game);
+//Overloading the input stream operator
+friend std::istream& operator>>(std::istream& in, TicTacToe& game);
+
 private:
     //class private data
     string player;
@@ -32,7 +39,6 @@ public:
     void start_game(string first_player);
     void mark_board(int position);
     string get_player() const;
-    void display_board() const;
     string get_winner();
 };
 

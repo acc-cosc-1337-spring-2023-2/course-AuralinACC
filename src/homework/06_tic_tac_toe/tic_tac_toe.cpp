@@ -1,4 +1,4 @@
-//cpp
+//tic_tac_toe.cpp
 #include "tic_tac_toe.h"
 
 void TicTacToe::set_next_player()
@@ -82,23 +82,6 @@ void TicTacToe::mark_board(int position)
     set_next_player();
 }
 string TicTacToe::get_player() const {return player;} /*return the player(private variable) value*/
-void TicTacToe::display_board() const 
-{
-    /*
-    Iterate vector of strings pegs to 
-    Display a tic tac toe board in 3x 3 format
-    */;
-    for (int i = 0; i < 3; i++)
-    {
-        for (int j = 0; j < 3; j++)
-        {
-            cout<<pegs[(i * 3) + j];
-            if (j < 2){cout<<"|";}
-        }
-        if(i < 2){cout<<"\n";}
-    }
-    cout<<"\n";
-}
 string TicTacToe::get_winner()
 {
     return winner;
@@ -167,4 +150,38 @@ void TicTacToe::set_winner()
     {
         winner = "X";
     }
+}
+
+std::ostream& operator<<(std::ostream& out, const TicTacToe& game)
+{
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            out<<game.pegs[(i * 3) + j];
+            if (j < 2){out<<"|";}
+        }
+        if(i < 2){out<<"\n";}
+    }
+    out<<"\n";
+    return out;
+}
+std::istream& operator>>(std::istream& in, TicTacToe& game)
+{
+    int position;
+    while(true)
+    {
+        cout<<"Enter position from 1 to 9: ";
+        in>>position;
+        if(position >= 1 && position <=9)
+        {
+            break;
+        }
+        else
+        {
+            cout<<"invalid input.  Please enter a number from 1 to 9. \n";
+        }
+    }
+    game.mark_board(position);
+    return in;
 }
