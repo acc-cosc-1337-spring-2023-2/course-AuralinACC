@@ -30,7 +30,7 @@ std::ostream& operator<<(std::ostream& out, const TicTacToeManager& manager)
     //Overload <<-Loop through vector of TicTacToe and call the TicTacToe cout overload.
     for ( const auto& game : manager.games)
     {
-        out << game;
+        out << game << "\n";
     }
     return out;
 }
