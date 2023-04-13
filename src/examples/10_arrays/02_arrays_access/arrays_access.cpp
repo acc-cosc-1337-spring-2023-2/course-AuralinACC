@@ -21,5 +21,7 @@ void display_times_table(int times_table[][COLS], const int ROWS)
         {
             cout<<setw(5)<<times_table[i][j];
         }
+
+        cout<<"\n";
     }
 }
