@@ -3,17 +3,16 @@
 
 using std::cout;
 
-
 int main() 
 {
-	//create dynamic memory
-	int* num = new int(5);//creates dynamic memory; 5 is in heap memory
-
-	//use the memrory(data)-limit the scope
-	cout<<*num<<"\n";
-
-	//delete memory
-	delete num;
+	//more code
+	//more code
+	memory_leak();
+	//more code
+	//more code
+	memory_leak();
+	memory_leak();
+	memory_leak();
 
 	return 0;
 }
