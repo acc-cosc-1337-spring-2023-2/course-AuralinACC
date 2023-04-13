@@ -7,7 +7,7 @@ void memory_leak()
     //create dynamic memory
     int* num = new int(5);
 
-    //use it (for how long will I juse the data)
+    //use it (for how long will I use the data)
 
     //forget to delete it
 
