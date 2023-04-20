@@ -2,6 +2,8 @@
 #include "tic_tac_toe.h"
 
  TicTacToe::TicTacToe(int size) : pegs(size*size, " "){}
+ TicTacToe::TicTacToe(vector<string> p, string win)
+  : pegs(p), winner(win){}
 
 void TicTacToe::set_next_player()
 {
@@ -111,6 +113,8 @@ void TicTacToe::set_winner()
         winner = "X";
     }
 }
+
+vector<string> TicTacToe::get_pegs() const{return pegs;}
 
 std::ostream& operator<<(std::ostream& out, const TicTacToe& game)
 {

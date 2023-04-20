@@ -46,6 +46,9 @@ public:
         Example: SomeConstructor(int s) :some_vector(s*s, " " ){}
         //this will initialize some_vector to s*s elements of " "*/
     TicTacToe(int size);
+    //Add class constructor in .h file TicTacToe(std::vector<string> p, string win) 
+    //more code here to initialize the pegs vector with p and initialize winner.
+    TicTacToe(vector<string> p, string win);
 
     //function/data members
     bool game_over();
@@ -53,6 +56,8 @@ public:
     void mark_board(int position);
     string get_player() const;
     string get_winner();
+    //Add const class function get_pegs that returns a vector of strings return the pegs vector
+    vector<string> get_pegs() const;
 };
 
 #endif
