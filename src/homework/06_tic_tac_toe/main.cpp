@@ -8,7 +8,8 @@ using std::make_unique;
 
 int main() 
 {
-    TicTacToeManager manager;
+    TicTacToeData data;
+    TicTacToeManager manager(data);
     unique_ptr<TicTacToe> game;
     int o, x, t;
     auto prompt = 'Y';
