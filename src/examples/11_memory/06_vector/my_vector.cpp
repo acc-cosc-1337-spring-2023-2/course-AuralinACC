@@ -59,6 +59,25 @@ Vector::Vector(Vector&& v)
     v.elements = nullptr;
     v.size = 0;
 }
+/* 
+1-clear/delete original memory from v
+2-point v1 elements to v.elements
+3-get size from v...
+*/
+Vector& Vector::operator=(Vector&& v)
+{
+    cout<<"Move assignment delete memory "<<elements<<"\n";
+    delete[] elements;
+
+    elements = v.elements;
+    cout<<"Move assignment switch pointers "<<elements<<"\n";
+
+    size = v.size;
+    v.elements = nullptr;
+    v.size = 0;
+
+    return *this;
+}
 
 Vector::~Vector()
 {
@@ -76,4 +95,10 @@ void use_vector()
 
     //cout<<"unloaded fomm the stack\n";
     ////more code here
+}
+
+Vector get_vector()
+{
+    Vector v(3);
+    return v;
 }

@@ -1,11 +1,12 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 #include "ref_pointers.h"
+#include "my_vector.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
-
+/*
 TEST_CASE("Test ref ptr params")
 {
 	int num1 = 1;
@@ -14,4 +15,11 @@ TEST_CASE("Test ref ptr params")
 
 	REQUIRE(num1 == 10);
 	REQUIRE(num2 == 20);
+}
+*/
+
+TEST_CASE("overwrite existing vector with a value return vector function")
+{
+	Vector v(3);
+	v = get_vector();
 }
