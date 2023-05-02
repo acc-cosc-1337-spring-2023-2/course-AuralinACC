@@ -53,7 +53,7 @@ TEST_CASE("Test vector push back w capacity 3")
 
 TEST_CASE("Test vector push back w capacity 0")
 {
-	Vector v;
+	Vector<int> v;
 
 	REQUIRE(v.Capacity() == 0);
 	REQUIRE(v.Size() == 0);

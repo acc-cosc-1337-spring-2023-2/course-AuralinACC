@@ -3,13 +3,14 @@
 //
 using std::cout;
 
-Vector::Vector(int s)
- : capacity{s}, elements{new int[s]}
+template<typename T>
+Vector<T>::Vector(int s)
+ : capacity{s}, elements{new T[s]}
 {
     cout<<"created new memory at "<<elements<<"\n";
 }
-
-Vector::Vector(const Vector& v)
+template<typename T>
+Vector<T>::Vector(const Vector<T>& v)
  : size{v.size}, capacity{v.capacity}, elements{new int[v.capacity]}
 {
     cout<<"Copy constructor = created memory at "<<elements<<"\n";
@@ -27,9 +28,10 @@ Vector::Vector(const Vector& v)
 5-Set v1.size to v.size
 6-Return a reference to itself
 */
-Vector& Vector::operator=(const Vector& v)
+template<typename T>
+Vector<T>& Vector<T>::operator=(const Vector<T>& v)
 {
-    int* temp = new int[v.size];
+    T* temp = new T[v.size];
 
     for(auto i=0; i < v.size; i++){
         temp[i] = v.elements[i];
@@ -52,7 +54,8 @@ Vector& Vector::operator=(const Vector& v)
 3-point v.elements to nothing(nullptr)
 4-set v size to 0
 */
-Vector::Vector(Vector&& v)
+template<typename T>
+Vector<T>::Vector(Vector<T>&& v)
  : size{v.size}, elements{v.elements}
 {
     cout<<"move constructor switch pointer "<<elements<<"\n";
@@ -64,7 +67,8 @@ Vector::Vector(Vector&& v)
 2-point v1 elements to v.elements
 3-get size from v...
 */
-Vector& Vector::operator=(Vector&& v)
+template<typename T>
+Vector<T>& Vector<T>::operator=(Vector<T>&& v)
 {
     cout<<"Move assignment delete memory "<<elements<<"\n";
     delete[] elements;
@@ -79,27 +83,33 @@ Vector& Vector::operator=(Vector&& v)
     return *this;
 }
 
-Vector::~Vector()
+template<typename T>
+Vector<T>::~Vector()
 {
     cout<<"delete the memory at "<<elements<<"\n";
     delete[] elements;
 }
 
+//configure Vector template class to support int, double, char
+template class Vector<int>;
+template class Vector<double>;
+template class Vector<char>;
+
 //NOT A CLASS FUNCTION; THESE ARE FREE FUNCTIONS
 void use_vector()
 {   //recommended usage of my vector
     //cout<<"loaded to the stack\n";
-    Vector v(3);
+    Vector<int> v(3);
     v[0] = 3;//write
     cout<<v[0]<<"\n";//read
 
     //cout<<"unloaded fomm the stack\n";
     ////more code here
 }
-
-Vector get_vector()
+template<typename T>
+Vector<T> get_vector()
 {
-    Vector v(3);
+    Vector<int> v(3);
     return v;
 }
 /*
@@ -110,7 +120,8 @@ Vector get_vector()
 5-set elements to temp meory
 6-set capacity to new_size
 */
-void Vector::Reserve(int new_size)
+template<typename T>
+void Vector<T>::Reserve(int new_size)
 {
     if(new_size <= capacity)
     {
@@ -135,7 +146,8 @@ void Vector::Reserve(int new_size)
 3-add value current elements[size] 
 4-increment the size
 */
-void Vector::PushBack(int value)
+template<typename T>
+void Vector<T>::PushBack(T value)
 {
     if(capacity == 0)
     {
